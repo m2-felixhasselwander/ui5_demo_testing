@@ -15,11 +15,7 @@
     "@sap/ux-ui5-tooling": "1"
   },
   "scripts": {
-<<<<<<< HEAD
     "start": "fiori run --config ./ui5-local.yaml --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#demoproject-display\"",
-=======
-    "start": "fiori run --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#demoproject-display\"",
->>>>>>> 2bbbb8d (Added todo app content)
     "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#demoproject-display\"",
     "build": "ui5 build --config=ui5.yaml --clean-dest --dest dist",
     "deploy": "fiori verify",
