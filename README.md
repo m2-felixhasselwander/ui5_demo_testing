@@ -15,6 +15,15 @@
 
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version. (See https://nodejs.org)
 
-### Integration Tests: Implement Todo Journey
+### Further Reading
 
-See test/integration/TodoListJourney.js for skeleton
+https://blogs.sap.com/2018/08/30/testing-ui5-apps-part-1-setup-and-unit-testing/
+Serving the app using grunt:
+https://github.com/vobu/openui5-sample-app-testing/tree/02_opa-tests
+
+App Demo by SAP:
+https://github.com/SAP/openui5-sample-app/tree/bas-demo
+
+Additional frameworks:
+wdi5 https://github.com/ui5-community/wdi5
+ui5-uiveri5 https://github.com/SAP/ui5-uiveri5

@@ -4,7 +4,7 @@ sap.ui.define([
 	"./FilterJourney",
 	"./NavigationJourney",
 	"./SearchJourney",
-	//"./TodoListJourney"
+	"./TodoListJourney"
 ], function (Opa5, Startup, NavigationJourney, FilterJourney) {
 	"use strict";
 
