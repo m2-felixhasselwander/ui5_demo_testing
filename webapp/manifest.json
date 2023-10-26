@@ -33,11 +33,7 @@
     }
   },
   "sap.ui5": {
-<<<<<<< HEAD
-    "flexEnabled": true,
-=======
     "flexEnabled": false,
->>>>>>> 2bbbb8d (Added todo app content)
     "dependencies": {
       "minUI5Version": "1.119.2",
       "libs": {
@@ -61,15 +57,11 @@
         "settings": {
           "bundleName": "demoproject.i18n.i18n"
         }
-<<<<<<< HEAD
-      }
-=======
       },
 			"": {
 				"type": "sap.ui.model.json.JSONModel",
 				"uri": "model/todoitems.json"
 			}
->>>>>>> 2bbbb8d (Added todo app content)
     },
     "resources": {
       "css": [
