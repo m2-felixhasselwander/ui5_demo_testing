@@ -4,7 +4,7 @@ sap.ui.define([
 	"sap/ui/test/opaQunit",
 	"./pages/App",
 	"./pages/Main"
-], function (opaTest) {
+], function (opaTest, App, Main) {
 	"use strict";
 
 	QUnit.module("Navigation Journey");
@@ -15,7 +15,7 @@ sap.ui.define([
 
 		// Assertions
 		Then.onTheAppPage.iShouldSeeTheApp();
-      	Then.onTheViewPage.iShouldSeeThePageView();
+		Then.onTheViewPage.iShouldSeeThePageView();
 
 		//Cleanup
 		Then.iTeardownMyApp();

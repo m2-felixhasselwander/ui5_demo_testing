@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/test/Opa5",
 	"./arrangements/Startup",
+	"./FilterJourney",
 	"./NavigationJourney"
-], function (Opa5, Startup) {
+], function (Opa5, Startup, NavigationJourney, FilterJourney) {
 	"use strict";
 
 	Opa5.extendConfig({
