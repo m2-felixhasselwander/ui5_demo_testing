@@ -34,4 +34,63 @@ sap.ui.define([
 		assert.ok(this.oAppController);
 	});
 
+	// QUnit.test("Should add a todo element to the model", function (assert) {
+	// 	// Arrange
+	// 	// initial assumption: to-do list is empty
+
+
+	// 	// Act
+
+
+	// 	// Assumption
+
+	// });
+
+	// QUnit.test("Should toggle the completed items in the model", function (assert) {
+	// 	// Arrange
+	// 	var oModelData = {
+	// 		todos: [{
+	// 			"title": "Start this app",
+	// 			"completed": false
+	// 		}],
+	// 		itemsLeftCount: 1
+	// 	};
+	// 	this.oJSONModelStub.setData(oModelData);
+
+	// 	// initial assumption
+
+
+	// 	// Act
+
+
+	// 	// Assumption
+	// });
+
+	// QUnit.test("Should clear the completed items", function (assert) {
+	// 	// Arrange
+
+	// 	// initial assumption
+
+
+	// 	// Act
+
+
+	// 	// Assumption
+
+	// });
+
+	// QUnit.test("Should update items left count when no todos are loaded, yet", function (assert) {
+	// 	// Arrange
+
+
+	// 	// initial assumption
+
+
+	// 	// Act
+
+
+	// 	// Assumption
+
+	// });
+
 });
