@@ -27,6 +27,15 @@ sap.ui.define([
 						actions: [new Press()],
 						errorMessage: "SegmentedButton can not be pressed"
 					});
+				},
+
+				iEnterTextForSearchAndPressEnter: function (text) {
+					return this.waitFor({
+						id: sSearchTodoItemsInputId,
+						viewName: sViewName,
+						actions: [new EnterText({ text: text })],
+						errorMessage: "The text cannot be entered"
+					});
 				}
 			},
 
