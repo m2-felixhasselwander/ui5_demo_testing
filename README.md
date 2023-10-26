@@ -15,19 +15,22 @@
 
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version. (See https://nodejs.org)
 
-### Integration Tests: Add search journey
+### Integration Tests: Add filter journey
 
 test/integration/pages/Main.js
 
-- create function iEnterTextForSearchAndPressEnter
+- create function iFilterForItems
 
 ```
-    iEnterTextForSearchAndPressEnter: function(text) {
+    iFilterForItems: function(filterKey) {
         return this.waitFor({
-            id: sSearchTodoItemsInputId,
             viewName: sViewName,
-            actions: [new EnterText({ text: text })],
-            errorMessage: "The text cannot be entered"
+            controlType: "sap.m.SegmentedButtonItem",
+            matchers: [
+                new Properties({ key: filterKey })
+            ],
+            actions: [new Press()],
+            errorMessage: "SegmentedButton can not be pressed"
         });
     }
 ```
@@ -51,101 +54,27 @@ iShouldSeeItemCount: function(iItemCount) {
 }
 ```
 
-- create test/integration/SearchJourney.js similar to navigation journey
+- create test/integration/FilterJourney.js similar to navigation journey
 - create function
 
 ```
-opaTest("should show correct item count after search (1)", function (Given, When, Then) {
+    opaTest("should show correct items when filtering for 'Active' items", function (Given, When, Then) {
 
-    // Arrangements
-    Given.iStartMyApp();
+		// Arrangements
+		Given.iStartMyApp();
 
-    //Actions
-    When.onTheAppPage.iEnterTextForSearchAndPressEnter("earn");
+		//Actions
+		When.onTheAppPage.iFilterForItems("active");
 
-    // Assertions
-    Then.onTheAppPage.iShouldSeeItemCount(1);
+		// Assertions
+		Then.onTheAppPage.iShouldSeeItemCount(1);
 
-    // Cleanup
-    Then.iTeardownMyApp();
-});
+		// Cleanup
+		Then.iTeardownMyApp();
+	});
 ```
 
 ## create additional test cases for:
 
-- should show correct item count after searching something not in table
-- should show correct item count after search and clearing the search
-  <details>
-    <summary>Hint</summary>
-
-      // Arrangements
-      Given.iStartMyApp();
-
-      //Actions
-      When.onTheAppPage.iEnterTextForSearchAndPressEnter("earn")
-          .and.iEnterTextForSearchAndPressEnter("");
-
-      // Assertions
-      Then.onTheAppPage.iShouldSeeItemCount(2);
-
-      // Cleanup
-      Then.iTeardownMyApp();
-
-  </details>
-
-- should show correct item count after search and active items filter
-  <details>
-    <summary>Hint</summary>
-
-      // Arrangements
-      Given.iStartMyApp();
-
-      //Actions
-      When.onTheAppPage.iEnterTextForSearchAndPressEnter("earn")
-          .and.iFilterForItems("active");
-
-      // Assertions
-      Then.onTheAppPage.iShouldSeeItemCount(1);
-
-      // Cleanup
-      Then.iTeardownMyApp();
-
-  </details>
-
-- should show correct item count after search and completed items filter
-    <details>
-      <summary>Hint</summary>
-
-        // Arrangements
-        Given.iStartMyApp();
-
-        //Actions
-        When.onTheAppPage.iEnterTextForSearchAndPressEnter("earn")
-        .and.iFilterForItems("completed");
-
-        // Assertions
-        Then.onTheAppPage.iShouldSeeItemCount(0);
-
-        // Cleanup
-        Then.iTeardownMyApp();
-
-  </details>
-
-- should show correct item count after search and all items filter
-    <details>
-    <summary>Hint</summary>
-
-        // Arrangements
-        Given.iStartMyApp();
-
-        //Actions
-        When.onTheAppPage.iEnterTextForSearchAndPressEnter("earn")
-        .and.iFilterForItems("all");
-
-        // Assertions
-        Then.onTheAppPage.iShouldSeeItemCount(1);
-
-        // Cleanup
-        Then.iTeardownMyApp();
-
-    </details>
+- should show correct items when filtering for 'Completed' items
+- should show correct items when filtering for 'Completed' items and switch back to 'All'
