@@ -77,7 +77,7 @@ opaTest("should show correct item count after search (1)", function (Given, When
 - should show correct item count after search and clearing the search
   <details>
     <summary>Hint</summary>
-    ```
+
       // Arrangements
       Given.iStartMyApp();
 
@@ -91,15 +91,12 @@ opaTest("should show correct item count after search (1)", function (Given, When
       // Cleanup
       Then.iTeardownMyApp();
 
-  ```
   </details>
-
-  ```
 
 - should show correct item count after search and active items filter
   <details>
     <summary>Hint</summary>
-    ```
+
       // Arrangements
       Given.iStartMyApp();
 
@@ -113,49 +110,42 @@ opaTest("should show correct item count after search (1)", function (Given, When
       // Cleanup
       Then.iTeardownMyApp();
 
-  ```
   </details>
 
-  ```
-
 - should show correct item count after search and completed items filter
-<details>
-  <summary>Hint</summary>
-  ```
-// Arrangements
-Given.iStartMyApp();
+    <details>
+      <summary>Hint</summary>
 
-//Actions
-When.onTheAppPage.iEnterTextForSearchAndPressEnter("earn")
-.and.iFilterForItems("completed");
+        // Arrangements
+        Given.iStartMyApp();
 
-// Assertions
-Then.onTheAppPage.iShouldSeeItemCount(0);
+        //Actions
+        When.onTheAppPage.iEnterTextForSearchAndPressEnter("earn")
+        .and.iFilterForItems("completed");
 
-// Cleanup
-Then.iTeardownMyApp();
+        // Assertions
+        Then.onTheAppPage.iShouldSeeItemCount(0);
 
-```
-</details>
+        // Cleanup
+        Then.iTeardownMyApp();
+
+  </details>
 
 - should show correct item count after search and all items filter
-<details>
-<summary>Hint</summary>
-```
+    <details>
+    <summary>Hint</summary>
 
-    // Arrangements
-    Given.iStartMyApp();
+        // Arrangements
+        Given.iStartMyApp();
 
-    //Actions
-    When.onTheAppPage.iEnterTextForSearchAndPressEnter("earn")
+        //Actions
+        When.onTheAppPage.iEnterTextForSearchAndPressEnter("earn")
         .and.iFilterForItems("all");
 
-    // Assertions
-    Then.onTheAppPage.iShouldSeeItemCount(1);
+        // Assertions
+        Then.onTheAppPage.iShouldSeeItemCount(1);
 
-    // Cleanup
-    Then.iTeardownMyApp();
+        // Cleanup
+        Then.iTeardownMyApp();
 
-```
-</details>
-```
+    </details>
